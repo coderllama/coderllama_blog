@@ -1,0 +1,27 @@
+.main {
+    top: 10%;
+    position: absolute;
+    margin-left: 30%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    column-gap: 6.666%;
+    width: 40%;
+}
+
+.item {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: solid 3px black;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.item:hover {
+    background-color: black;
+    color: white;
+    border: solid 3px black;
+    text-align: center;
+    font-weight: 600;
+}

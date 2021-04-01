@@ -1,7 +1,14 @@
 @tailwind base;
-
 /* Write your own custom base styles here */
 
+:root {
+    --background-gradient-blue :#02203c;
+ 
+}
+
+body {
+    /* background: linear-gradient(180deg, #1F0271 11.98%, rgba(2, 32, 60, 0) 100%), #02203C; */
+}
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */

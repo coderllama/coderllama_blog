@@ -1,0 +1,16 @@
+.main {
+    background-color: teal;
+    min-height: 150px;
+}
+
+.main h1 {
+    color: white;
+    display: flex;
+    font-size: x-large;
+    font-weight: 600;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    width: 100%;
+}

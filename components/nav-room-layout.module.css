@@ -1,0 +1,78 @@
+.main {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  background: whitesmoke;
+}
+
+.forwardButton,
+.backwardsButton {
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0.2;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  width: 10%;
+  z-index: 10;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: 0.85s;
+}
+
+.forwardButton {
+  right: -5%;
+}
+
+.backwardsButton {
+  left: -5%;
+}
+
+.forwardButtonHover {
+  cursor: pointer;
+  border-radius: 0%;
+  height: 100%;
+  top: 0%;
+  right: -3%;
+  width: 30vw;
+  background-color: rgb(4, 4, 43);
+  opacity: 1;
+
+  animation-name: forwardButtonHover;
+  animation-duration: 1.0ms;
+  /* border-left: solid 100px linear-gradient(rgba(255, 255, 255, .1), rgba(255,255,255,0.5) ); */
+}
+
+@keyframes forwardButtonHover{
+  to {background-color :red }
+}
+
+.leftPreviewVisible {
+  transform: translateX(-180%);
+}
+
+.leftPreview {
+  z-index: 100;
+  height: 80%;
+
+  width: 15%;
+
+  position: absolute;
+    right: -20%;
+  transition-delay: 0.75s;
+  transition-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.topRibbon {
+  position: absolute;
+  background-color: teal;
+  width: 100%;
+  height: 150px;
+}
+
+.topRibbon h1 {
+  margin-top: 20px;
+  font-size: xx-large;
+  color: aliceblue;text-align: center;
+}
