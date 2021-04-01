@@ -6,9 +6,15 @@ if (process.env.NODE_ENV === 'development') require('dotenv').config()
 
 const knex = require('knex')({
   client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
+  connection: {
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
+    username: process.env.DB_USERNAME,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+    ssl: true
+  },
   searchPath: ['knex', 'public'],
-  ssl: true
 });
 
 const postsDirectory = join(process.cwd(), '_posts')
