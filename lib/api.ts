@@ -12,7 +12,7 @@ const knex = require('knex')({
     user: process.env.DB_USERNAME,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
-    ssl: true
+    ssl: { rejectUnauthorized: true }
   },
   searchPath: ['knex', 'public'],
 });
