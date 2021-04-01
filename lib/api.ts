@@ -8,6 +8,7 @@ const knex = require('knex')({
   client: 'pg',
   connection: process.env.PG_CONNECTION_STRING,
   searchPath: ['knex', 'public'],
+  ssl: true
 });
 
 const postsDirectory = join(process.cwd(), '_posts')
