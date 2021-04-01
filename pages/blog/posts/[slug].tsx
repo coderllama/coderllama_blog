@@ -21,13 +21,17 @@ type BlogPostType = {
 
 type Props = {
   post: BlogPostType
-  morePosts: BlogPostType[]
-  preview?: boolean
+  body: string
 }
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post, body }: Props) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+
+  if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />
   }
   return (
@@ -47,7 +51,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 {post.title}
               </h1>
 
-              <PostBody content={post.body} />
+              <PostBody content={body} />
             </article>
           </>
         )}
@@ -63,35 +67,15 @@ type Params = {
   }
 }
 
-export async function getStaticProps({ params }: Params) {
-  
-  console.log(params.slug)
+export async function getServerSideProps(context: any) {
 
-  const post = await getBlogPostBySlug(params.slug)
-
+  const post = await getBlogPostBySlug(context.params.slug)
   const body = await markdownToHtml(post.body || '')
 
   return {
-    props: {
-      post: {
-        ...post,
-        body,
-      },
+    props:{
+      post,
+      body
     },
-  }
-}
-
-export async function getStaticPaths() {
-  const posts = await getAllBlogPostSlugs()
-
-  return {
-    paths: posts.map((post : any ) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
-    fallback: false,
   }
 }

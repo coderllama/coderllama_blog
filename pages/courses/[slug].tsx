@@ -54,7 +54,7 @@ type Params = {
   }
 }
 
-export async function getStaticProps({ params }: Params) {
+export async function getServerSideProps({ params }: Params) {
   const course = getCourseBySlug(params.slug, [
     'title',
     'slug',
@@ -73,17 +73,3 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
-  const courses = getAllCourses(['slug'])
-
-  return {
-    paths: courses.map((course) => {
-      return {
-        params: {
-          slug: course.slug,
-        },
-      }
-    }),
-    fallback: false,
-  }
-}

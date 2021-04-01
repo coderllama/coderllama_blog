@@ -116,5 +116,5 @@ export async function getAllBlogPostSlugs() {
 
 export async function getBlogPostBySlug(slug: string) {
   const post = await knex.select('title', 'author', 'body').from('blog_posts').where({slug: slug })
-  return post
+  return post[0]
 }

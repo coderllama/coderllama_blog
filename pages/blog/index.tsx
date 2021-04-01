@@ -22,7 +22,7 @@ const Index = ({posts}:any) => {
 
 export default Index
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getAllPosts()
 
   console.log(posts)

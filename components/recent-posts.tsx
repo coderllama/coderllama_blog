@@ -1,4 +1,3 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
 import PostType from "../types/post";
 import PostExcerptCard from "./post-excerpt-card";
 
