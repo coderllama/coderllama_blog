@@ -79,7 +79,7 @@ type Params = {
 export async function getServerSideProps(context: any) {
 
   var post = await getBlogPostBySlug(context.params.slug)
-  const body = await markdownToHtml(post?.body || '')
+  const body = await markdownToHtml(post.body || '')
 
   if (!post) {
     post = null
