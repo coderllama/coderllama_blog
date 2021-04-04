@@ -2,10 +2,12 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../../components/container'
 import PostBody from '../../../components/post-body'
+import CustomErrorPage from '../../../components/custom-error-page'
 import { getPostBySlug, getAllBlogPostSlugs, getBlogPostBySlug } from '../../../lib/api'
 import PostTitle from '../../../components/post-title'
 import Head from 'next/head'
 import markdownToHtml from '../../../lib/markdownToHtml'
+import styles from './blog-post.module.css'
 
 type BlogPostType = {
   slug: string
@@ -18,22 +20,24 @@ type BlogPostType = {
 }
 
 
-
 type Props = {
-  post: BlogPostType
-  body: string
+  post?: BlogPostType | null
+  body?: string
 }
 
-const Post = ({ post, body }: Props) => {
+const Post = (props: Props) => {
   const router = useRouter()
 
   if (router.isFallback) {
     return <div>Loading...</div>
   }
 
-  if (!router.isFallback && !post) {
-    return <ErrorPage statusCode={404} />
+  if (!router.isFallback && props.post === null) {
+    return <CustomErrorPage statusCode={'404'} />
   }
+
+  const { post, body } = props
+
   return (
       <Container>
         {router.isFallback ? (
@@ -43,15 +47,20 @@ const Post = ({ post, body }: Props) => {
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title}
+                  {post?.title}
                 </title>
               </Head>
 
-              <h1>
-                {post.title}
+              <h1 className={ styles.postTitle }>
+                {post?.title}
               </h1>
 
-              <PostBody content={body} />
+              <div className={styles.coverImgContainer}>
+                <img className={styles.coverImg} src={ "https://images.pexels.com/photos/96894/pexels-photo-96894.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" } ></img>
+                <p> Photo from Pexels.com </p>
+              </div>
+
+              <PostBody content={body  || ''} />
             </article>
           </>
         )}
@@ -69,8 +78,12 @@ type Params = {
 
 export async function getServerSideProps(context: any) {
 
-  const post = await getBlogPostBySlug(context.params.slug)
-  const body = await markdownToHtml(post.body || '')
+  var post = await getBlogPostBySlug(context.params.slug)
+  const body = await markdownToHtml(post?.body || '')
+
+  if (!post) {
+    post = null
+  }
 
   return {
     props:{

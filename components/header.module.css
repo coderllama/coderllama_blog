@@ -1,5 +1,5 @@
 .main {
-    background-color: teal;
+    background-color: var(--theme-main-color);
     min-height: 150px;
 }
 

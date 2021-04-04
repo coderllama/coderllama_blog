@@ -4,6 +4,8 @@ import matter from 'gray-matter'
 
 if (process.env.NODE_ENV === 'development') require('dotenv').config()
 
+const ssl_config = (process.env.NODE_ENV === "development") ? false :  { rejectUnauthorized: false }
+
 const knex = require('knex')({
   client: 'pg',
   connection: {
@@ -12,7 +14,7 @@ const knex = require('knex')({
     user: process.env.DB_USERNAME,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
-    ssl: { rejectUnauthorized: false }
+    ssl: ssl_config
   },
   searchPath: ['knex', 'public'],
 });

@@ -3,12 +3,48 @@
 
 :root {
     --background-gradient-blue :#02203c;
- 
+    --theme-main-color-purple : rgb(163, 68, 163);
+    --theme-main-color-teal : teal;
+    --theme-color-dark-bg: #121212;
+    --theme-color-dark-white-text: rgb(190, 218, 218);
+    --theme-dark-heading-color: teal;
+
+    --theme-main-color: var(--theme-color-dark-bg);
+    --theme-main-bg-color: var(--theme-color-dark-bg)
 }
 
 body {
     /* background: linear-gradient(180deg, #1F0271 11.98%, rgba(2, 32, 60, 0) 100%), #02203C; */
+    background-color: var(--theme-main-bg-color);
+    color: var(--theme-color-dark-white-text);
 }
+
+.remark-highlight {
+    background-color: teal;
+    /* display: flex; */
+    /* text-align: left; */
+    /* justify-content: left; */
+    /* background-color: #02203c; */
+    /* color: lightgreen; */
+    /* padding-top: 20px; */
+    /* padding-left: 8px; */
+    border-left: teal 10px solid !important;
+    border-radius: 0 15px 15px 0 !important; 
+}
+
+/* .remark-highlight {
+    
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    background-color: #02203c;
+    color: lightgreen;
+    padding-top: 20px;
+    padding-left: 8px;
+    border-left: teal 10px solid;
+    border-radius: 0 15px 15px 0; 
+} */
+
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */

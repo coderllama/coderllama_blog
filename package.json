@@ -20,6 +20,7 @@
     "react-dom": "^16.13.0",
     "remark": "11.0.2",
     "remark-html": "10.0.0",
+    "remark-prism": "1.1.14",
     "typescript": "^4.0.3"
   },
   "devDependencies": {

@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recentPostsHeading {
+    color: salmon;
+    font-size: xx-large;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.recentPostContainer {
+    column-gap: 5%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    margin-top: 40px;
+    row-gap: 5%;
+    width: 60%;
+}

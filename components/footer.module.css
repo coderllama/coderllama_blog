@@ -1,0 +1,10 @@
+.main {
+    color: beige;
+    background-color: inherit;
+    height: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}

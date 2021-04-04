@@ -1,12 +1,10 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import styles from './footer.module.css'
+
 
 const Footer = () => {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        
-      </Container>
+    <footer className={styles.main}>
+        Copyright &copy; Anupama Codippily
     </footer>
   )
 }

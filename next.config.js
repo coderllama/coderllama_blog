@@ -1,5 +1,5 @@
 module.exports = {
     env: {
-        DATABASE_CONNECTION_POOL_URL: 'postgres://localhost/avcode_blog',
+        DATABASE_CONNECTION_POOL_URL: 'postgres://localhost/coderllama_db',
     },
   }

@@ -10,6 +10,30 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <div className={style.main}>
+       <link
+          rel="preload"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css"
+          as="script"
+        />
+        <link
+          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-${'okaidia'}.css`}
+          rel="stylesheet"
+        />
       <Meta />
       <div className="min-h-screen">
         <Header/>
