@@ -3,4 +3,4 @@ declare module "remark-prism" {
     type RemarkPrism = Plugin;
     const remarkPrism: RemarkPrism;
     export default remarkPrism;
-  }
+}
