@@ -4,7 +4,7 @@ import prism from './remark-prism/remark-prism/src'
 
 export default async function markdownToHtml(markdown:any ) {
   // const withPrism = prism.highlight( markdown.toString(), prism.languages.javascript, 'javascript');
-  const result = await remark().use(prism).use(html).process(markdown)
+  const result = await remark().use(html).use(prism).process(markdown)
   return result.toString()
 }
 
