@@ -10,7 +10,7 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <div className={style.main}>
-       <link
+       {/* <link
           rel="preload"
           href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
           as="script"
@@ -33,7 +33,7 @@ const Layout = ({ preview, children }: Props) => {
         <link
           href={`https://unpkg.com/prismjs@0.0.1/themes/prism-${'okaidia'}.css`}
           rel="stylesheet"
-        />
+        /> */}
       <Meta />
       <div className="min-h-screen">
         <Header/>
