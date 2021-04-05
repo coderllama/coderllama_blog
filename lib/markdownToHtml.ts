@@ -16,7 +16,7 @@
        /* options */
      })
      .use(require('remark-html'))
-     .process(markdown, (err: any, file: any) => console.log(String(file)));
+     .process(markdown);
 
 
   return r.toString()
