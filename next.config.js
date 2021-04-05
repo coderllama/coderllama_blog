@@ -3,7 +3,7 @@ const path =  require('path')
 module.exports = {
   resolve: {
     alias: {
-      prismjs$: path.resolve(__dirname, "/node_modules/prismjs"),
+      prismjs: path.resolve(__dirname, "/node_modules/prismjs"),
     },
     modules : ['node_modules']
   },
