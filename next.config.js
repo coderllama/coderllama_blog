@@ -1,3 +1,5 @@
+import path from 'path'
+
 module.exports = {
   resolve: {
     alias: {
