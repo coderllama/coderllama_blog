@@ -18,6 +18,7 @@ module.exports = {
       fs: "empty",
       net: "empty",
       tls: "empty",
+      module: "empty"
     };
     return config;
   },
