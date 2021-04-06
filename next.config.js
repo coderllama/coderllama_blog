@@ -3,7 +3,7 @@ const path =  require('path')
 module.exports = {
   resolve : {
       alias : {
-        prismjs : require('prismjs')
+        prismjs : require.resolve('prismjs')
       }    
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
