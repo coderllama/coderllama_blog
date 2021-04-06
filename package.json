@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "start-dev": "SET NODE_ENV=development&& next start",
     "typecheck": "tsc"
   },
   "dependencies": {

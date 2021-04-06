@@ -81,6 +81,12 @@ export async function getServerSideProps(context: any) {
   var post = await getBlogPostBySlug(context.params.slug)
   const body = await markdownToHtml(post.body || '')
 
+  console.log('******************************************')
+  console.log('******************************************')
+  console.log(require.resolve('prismjs/components/prism-markup'))
+  console.log('******************************************')
+  console.log('******************************************')
+
   if (!post) {
     post = null
   }
