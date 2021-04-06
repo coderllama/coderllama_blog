@@ -22,7 +22,7 @@ type BlogPostType = {
 
 type Props = {
   post?: BlogPostType | null
-  body?: string
+  body?: string 
 }
 
 const Post = (props: Props) => {
@@ -35,6 +35,8 @@ const Post = (props: Props) => {
   if (!router.isFallback && props.post === null) {
     return <CustomErrorPage statusCode={'404'} />
   }
+
+  // console.log(props)
 
   const { post, body } = props
 
@@ -79,16 +81,12 @@ type Params = {
 export async function getServerSideProps(context: any) {
 
   var post = await getBlogPostBySlug(context.params.slug)
-  const body = await markdownToHtml(post.body || '')
-
-  console.log('******************************************')
-  console.log('******************************************')
-  console.log(require.resolve('prismjs/components/prism-markup'))
-  console.log('******************************************')
-  console.log('******************************************')
+  var body = await markdownToHtml(post.body || '')
+  
+  console.log(body)
 
   if (!post) {
-    post = null
+    return { props : {} }
   }
 
   return {
