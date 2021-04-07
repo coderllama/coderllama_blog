@@ -12,10 +12,7 @@ const markdownToHtml = async (markdown:string):Promise<any> => {
   .use(require('remark-parse'))
   .use(require('remark-stringify'))
   .use(require('remark-prism'), {
-    plugins: [
-      'line-numbers',
-      'treeview',
-    ]
+    /* options */
   })
   .use(require('remark-html'))
   .process(markdown);

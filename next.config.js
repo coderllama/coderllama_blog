@@ -1,10 +1,8 @@
 const path =  require('path')
 
 module.exports = {
-  resolve : {
-      alias : {
-        prismjs : require.resolve('prismjs')
-      }    
+  future: {
+    webpack5: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Note: we provide webpack above so you should not `require` it
